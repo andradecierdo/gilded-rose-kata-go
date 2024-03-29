@@ -1,15 +1,11 @@
-package main
-
-import (
-    "github.com/andradecierdo/gilded-rose-kata-go/go/gildedrose"
-)
+package gildedrose
 
 type GildedRose struct {
-	Items             []Item
+	Items             []*Item
 	CalculatorBuilder ItemCalculatorBuilder
 }
 
-func NewGildedRose(items []IItem, calculatorBuilder ItemCalculatorBuilder) *GildedRose {
+func NewGildedRose(items []*Item, calculatorBuilder ItemCalculatorBuilder) *GildedRose {
 	return &GildedRose{
 		Items:             items,
 		CalculatorBuilder: calculatorBuilder,
@@ -17,9 +13,11 @@ func NewGildedRose(items []IItem, calculatorBuilder ItemCalculatorBuilder) *Gild
 }
 
 func (gr *GildedRose) UpdateQuality() {
-	for _, item := range gr.Items {
+	for index, item := range gr.Items {
 		itemCalculator := gr.CalculatorBuilder.GetItemCalculator(item)
 		itemCalculator.UpdateQuality()
+
+		i := itemCalculator.GetItem()
+		gr.Items[index] = i
 	}
 }
-

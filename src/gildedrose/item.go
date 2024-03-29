@@ -7,7 +7,7 @@ const (
     AgedBrie
     BackStagePasses
     ConjuredManaCake
-    RegularItem
+    RegularItemType
 )
 
 type Item struct {

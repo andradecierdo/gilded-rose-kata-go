@@ -1,16 +1,16 @@
 package gildedrose
 
-type ItemQualityCalculator interface {
-	UpdateQuality()
-}
-
 type ItemCalculatorBuilder struct{}
 
-func (icb *ItemCalculatorBuilder) GetItemCalculator(item models.IItem) ItemQualityCalculator {
-	switch item.GetType() {
+func NewItemCalculatorBuilder() ItemCalculatorBuilder {
+    return ItemCalculatorBuilder{}
+}
+
+func (icb *ItemCalculatorBuilder) GetItemCalculator(item *Item) ItemQualityCalculator {
+	switch item.Type {
 	case AgedBrie:
 		return NewAgedBrieItem(item)
-	case BackStagePassess:
+	case BackStagePasses:
 		return NewBackStagePassesItem(item)
 	case ConjuredManaCake:
 		return NewConjuredManaCakeItem(item)

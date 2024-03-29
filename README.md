@@ -1,4 +1,4 @@
-# Gilded Rose Refactoring Kata Solution (Typescript)
+# Gilded Rose Refactoring Kata Solution (Go)
 
 You can find out more about this exercise here: [Why Developers LOVE The Gilded Rose Kata](https://youtu.be/Mt4XpGxigT4).
 

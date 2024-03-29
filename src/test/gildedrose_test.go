@@ -2,8 +2,7 @@ package gildedrose_test
 
 import (
 	"testing"
-
-	"github.com/emilybache/gildedrose-refactoring-kata/gildedrose"
+    "gildedrose"
 )
 
 func Test_Foo(t *testing.T) {

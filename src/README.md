@@ -6,7 +6,7 @@
 go run texttest_fixture.go [<number-of-days>; default: 2]
 ```
 
-- Run tests :
+- Run tests : TODO
 
 ```shell
 go test ./...

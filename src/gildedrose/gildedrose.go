@@ -1,23 +1,23 @@
 package gildedrose
 
 type GildedRose struct {
-	Items             []*Item
-	CalculatorBuilder ItemCalculatorBuilder
+    Items             []*Item
+    CalculatorBuilder ItemCalculatorBuilder
 }
 
 func NewGildedRose(items []*Item, calculatorBuilder ItemCalculatorBuilder) *GildedRose {
-	return &GildedRose{
-		Items:             items,
-		CalculatorBuilder: calculatorBuilder,
-	}
+    return &GildedRose{
+        Items:             items,
+        CalculatorBuilder: calculatorBuilder,
+    }
 }
 
 func (gr *GildedRose) UpdateQuality() {
-	for index, item := range gr.Items {
-		itemCalculator := gr.CalculatorBuilder.GetItemCalculator(item)
-		itemCalculator.UpdateQuality()
+    for index, item := range gr.Items {
+        itemCalculator := gr.CalculatorBuilder.GetItemCalculator(item)
+        itemCalculator.UpdateQuality()
 
-		i := itemCalculator.GetItem()
-		gr.Items[index] = i
-	}
+        i := itemCalculator.GetItem()
+        gr.Items[index] = i
+    }
 }

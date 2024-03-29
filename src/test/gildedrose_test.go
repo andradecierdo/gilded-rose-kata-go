@@ -6,13 +6,13 @@ import (
 )
 
 func Test_Foo(t *testing.T) {
-	var items = []*gildedrose.Item{
-		{"foo", 0, 0},
-	}
+    var items = []*gildedrose.Item{
+        {"foo", 0, 0},
+    }
 
-	gildedrose.UpdateQuality(items)
+    gildedrose.UpdateQuality(items)
 
-	if items[0].Name != "fixme" {
-		t.Errorf("Name: Expected %s but got %s ", "fixme", items[0].Name)
-	}
+    if items[0].Name != "fixme" {
+        t.Errorf("Name: Expected %s but got %s ", "fixme", items[0].Name)
+    }
 }

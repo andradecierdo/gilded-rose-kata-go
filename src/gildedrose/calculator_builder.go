@@ -6,7 +6,7 @@ func NewItemCalculatorBuilder() ItemCalculatorBuilder {
     return ItemCalculatorBuilder{}
 }
 
-func (icb *ItemCalculatorBuilder) GetItemCalculator(item *Item) ItemQualityCalculator {
+func (icb *ItemCalculatorBuilder) GetItemCalculator(item *Item) ItemQuality {
     switch item.Type {
     case AgedBrie:
         return NewAgedBrieItem(item)

@@ -16,8 +16,6 @@ func (gr *GildedRose) UpdateQuality() {
     for index, item := range gr.Items {
         itemCalculator := gr.CalculatorBuilder.GetItemCalculator(item)
         itemCalculator.UpdateQuality()
-
-        i := itemCalculator.GetItem()
-        gr.Items[index] = i
+        gr.Items[index] = itemCalculator.GetItem()
     }
 }

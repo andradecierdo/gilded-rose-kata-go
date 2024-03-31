@@ -5,6 +5,11 @@ import (
     "gildedrose"
 )
 
+type ExpectedItems struct {
+    SellIn  int
+    Quality int
+}
+
 var items = []*gildedrose.Item{
     {"+5 Dexterity Vest", 10, 20, gildedrose.RegularItemType},
     {"Aged Brie", 2, 0, gildedrose.AgedBrie},
@@ -36,11 +41,6 @@ func Test_Gilded_Rose_Initialization(test *testing.T) {
         { Quality: 6, SellIn: 3},
     }
     TestFunc(test, expected_items, gr.Items)
-}
-
-type ExpectedItems struct {
-    SellIn  int
-    Quality int
 }
 
 func Test_Gilded_Rose_Day_1(test *testing.T) {

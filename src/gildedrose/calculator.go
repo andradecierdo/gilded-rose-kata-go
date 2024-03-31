@@ -1,11 +1,15 @@
 package gildedrose
 
+type ItemQuality interface {
+    UpdateQuality()
+    GetItem() *Item
+}
+
 type ItemQualityCalculator interface {
+    ItemQuality
     CalculateQualityAdjustment() int
     CalculateQuality() int
     UpdateItemSellIn()
-    UpdateQuality()
-    GetItem() *Item
 }
 
 type QualityLimiter struct {

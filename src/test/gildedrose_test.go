@@ -1,7 +1,7 @@
 package gildedrose_test
 
 import (
-	"testing"
+    "testing"
     "gildedrose"
 )
 
@@ -18,7 +18,7 @@ var items = []*gildedrose.Item{
     {"Conjured Mana Cake", 3, 6, gildedrose.ConjuredManaCake},
 }
 
-var TestFunc = func(test *testing.T, expected []ExpectedItems, actual []*gildedrose.Item) {
+var ValidateValues = func(test *testing.T, expected []ExpectedItems, actual []*gildedrose.Item) {
     for index, item := range actual {
         if expected[index].SellIn != item.SellIn || expected[index].Quality != item.Quality  {
             test.Errorf(
@@ -40,7 +40,7 @@ func Test_Gilded_Rose_Initialization(test *testing.T) {
         { Quality: 20, SellIn: 15},
         { Quality: 6, SellIn: 3},
     }
-    TestFunc(test, expected_items, gr.Items)
+    ValidateValues(test, expected_items, gr.Items)
 }
 
 func Test_Gilded_Rose_Day_1(test *testing.T) {
@@ -52,7 +52,7 @@ func Test_Gilded_Rose_Day_1(test *testing.T) {
         { Quality: 21, SellIn: 14},
         { Quality: 4, SellIn: 2},
     }
-    TestFunc(test, expected_items, gr.Items)
+    ValidateValues(test, expected_items, gr.Items)
 }
 
 func Test_Gilded_Rose_Day_2(test *testing.T) {
@@ -64,7 +64,7 @@ func Test_Gilded_Rose_Day_2(test *testing.T) {
         { Quality: 22, SellIn: 13},
         { Quality: 2, SellIn: 1},
     }
-    TestFunc(test, expected_items, gr.Items)
+    ValidateValues(test, expected_items, gr.Items)
 }
 
 func Test_Gilded_Rose_Day_3(test *testing.T) {
@@ -76,7 +76,7 @@ func Test_Gilded_Rose_Day_3(test *testing.T) {
         { Quality: 23, SellIn: 12},
         { Quality: 0, SellIn: 0},
     }
-    TestFunc(test, expected_items, gr.Items)
+    ValidateValues(test, expected_items, gr.Items)
 }
 
 func Test_Gilded_Rose_Day_4(test *testing.T) {
@@ -88,7 +88,7 @@ func Test_Gilded_Rose_Day_4(test *testing.T) {
         { Quality: 24, SellIn: 11},
         { Quality: 0, SellIn: -1},
     }
-    TestFunc(test, expected_items, gr.Items)
+    ValidateValues(test, expected_items, gr.Items)
 }
 
 func Test_Gilded_Rose_Day_5(test *testing.T) {
@@ -100,5 +100,5 @@ func Test_Gilded_Rose_Day_5(test *testing.T) {
         { Quality: 25, SellIn: 10},
         { Quality: 0, SellIn: -2},
     }
-    TestFunc(test, expected_items, gr.Items)
+    ValidateValues(test, expected_items, gr.Items)
 }
